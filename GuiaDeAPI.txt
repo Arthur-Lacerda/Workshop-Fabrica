@@ -1,0 +1,42 @@
+1  - Cria uma pasta vazia
+2  - Cria um ambiente virtual (python -m venv venv)
+3  - Ativa a venv (.\venv\Scripts\activate.ps1)
+4  - Baixa as coisas, o django rest (pip install djangorestframework)
+5  - Cria o projeto (django-admin startproject nomedapasta .)
+6  - Cria o app (python .\manage.py startapp nomedoapp)
+7  - Da um ls para ver onde a pasta alocada no siretório
+8  - Vai na settings e coloca dentro da installedapps nome rest_framework e o nome do app(não esquece da virgula)
+9  - Fazer o python manage.py makemigrations e o migrate
+10 - python manage.py runserver
+11 - Verificar no navegador se apareceu o foguetinho, se sim está tudo certo
+12 - Cria dois arquivos no app, o serializers.py e o urls.py
+13 - Importar na models from django.db import models
+14 - Modificar o models para adcionar as classes e a tabela para recolher os dados
+15 - Vamos para o serializers, from rest_framework import serializers e from .models import modelo
+16 - Criamos as classes serializer para converter de python para json e vice versa (serializer.ModelSerializer):
+   	- Dentro de uma classe serializer criar a classe meta:
+   	- Coloca um modelo
+   	- Selecionar os fields
+
+17 - Criamos as views e jogamos o serializer dentro:
+   	- from rest_framework import viewsets
+   	- from .models import modelo
+   	- from .serializers import classeSerializer
+   	- Adcionar as classes para transformar o serializer em viewset
+
+18 - Ir para urls
+   	- from rest_framework import routers
+   	- from .views import classeviewset
+	- Setar o routers como Default viewset
+	- Registrar os routers das viewsets
+	- urlpatterns = router.urls
+
+19 - ir para urls do projeto
+	- import include
+	- Criar o path da urls criada no app
+
+20 - Python manage.py makemigrations, migrate, runserver
+21 - Vai no navegador para ver se houve mudança
+	- /nomedoapp
+
+22 - Testar os métodos
